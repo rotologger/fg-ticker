@@ -9,9 +9,8 @@ import {
   ToggleControl,
   RadioControl,
 } from "@wordpress/components";
-import { __, setLocaleData } from "@wordpress/i18n";
+import { __ } from "@wordpress/i18n";
 import "./editor.scss";
-import metadata from "./block.json";
 
 export default function Edit({ attributes, setAttributes }) {
   const {
@@ -27,13 +26,13 @@ export default function Edit({ attributes, setAttributes }) {
   return (
     <>
       <InspectorControls>
-        <PanelBody title={__("Settings", metadata.textdomain)}>
+        <PanelBody title={__("Settings", "fg-ticker")}>
           {/* Delay before start */}
           <NumberControl
-            label={__("Delay before start", metadata.textdomain)}
+            label={__("Delay before start", "fg-ticker")}
             help={__(
               "Time in ms before the marquee starts animating",
-              metadata.textdomain
+              "fg-ticker"
             )}
             value={delayBeforeStart}
             onChange={(val) => setAttributes({ delayBeforeStart: val * 1 })}
@@ -44,10 +43,10 @@ export default function Edit({ attributes, setAttributes }) {
 
           {/* Duplicated */}
           <ToggleControl
-            label={__("Duplicated", metadata.textdomain)}
+            label={__("Duplicated", "fg-ticker")}
             help={__(
               "Should the marquee be duplicated to show an effect of continuous flow. Use this only when the text is shorter than the container",
-              metadata.textdomain
+              "fg-ticker"
             )}
             checked={duplicated}
             onChange={() => setAttributes({ duplicated: !duplicated })}
@@ -55,33 +54,33 @@ export default function Edit({ attributes, setAttributes }) {
 
           {/* Direction */}
           <RadioControl
-            label={__("Direction", metadata.textdomain)}
+            label={__("Direction", "fg-ticker")}
             help={__(
               "Direction towards which the marquee will animate",
-              metadata.textdomain
+              "fg-ticker"
             )}
             selected={direction}
             options={[
-              { label: __("Left", metadata.textdomain), value: "left" },
-              { label: __("Right", metadata.textdomain), value: "right" },
+              { label: __("Left", "fg-ticker"), value: "left" },
+              { label: __("Right", "fg-ticker"), value: "right" },
             ]}
             onChange={(direction) => setAttributes({ direction })}
           />
 
           {/* Pause on Hover */}
           <ToggleControl
-            label={__("Pause on hover", metadata.textdomain)}
-            help={__("Pause the marquee on hover", metadata.textdomain)}
+            label={__("Pause on hover", "fg-ticker")}
+            help={__("Pause the marquee on hover", "fg-ticker")}
             checked={pauseOnHover}
             onChange={() => setAttributes({ pauseOnHover: !pauseOnHover })}
           />
 
           {/* Speed */}
           <NumberControl
-            label={__("Speed", metadata.textdomain)}
+            label={__("Speed", "fg-ticker")}
             help={__(
               "Speed allows you to set a relatively constant marquee speed regardless of the width of the containing element. Speed is measured in pixels/second",
-              metadata.textdomain
+              "fg-ticker"
             )}
             value={speed}
             onChange={(val) => setAttributes({ speed: val * 1 })}
@@ -93,11 +92,8 @@ export default function Edit({ attributes, setAttributes }) {
           {/* Gap */}
           {duplicated && (
             <NumberControl
-              label={__("Gap", metadata.textdomain)}
-              help={__(
-                "Gap in pixels between the tickers",
-                metadata.textdomain
-              )}
+              label={__("Gap", "fg-ticker")}
+              help={__("Gap in pixels between the tickers", "fg-ticker")}
               value={gap}
               onChange={(val) => setAttributes({ gap: val * 1 })}
               min="0"
@@ -108,11 +104,8 @@ export default function Edit({ attributes, setAttributes }) {
 
           {/* Recalc on resize */}
           <ToggleControl
-            label={__("Recalc on resize", metadata.textdomain)}
-            help={__(
-              "Should the marquee be updated on resize",
-              metadata.textdomain
-            )}
+            label={__("Recalc on resize", "fg-ticker")}
+            help={__("Should the marquee be updated on resize", "fg-ticker")}
             checked={recalcResize}
             onChange={() => setAttributes({ recalcResize: !recalcResize })}
           />

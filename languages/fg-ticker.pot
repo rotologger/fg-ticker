@@ -1,0 +1,131 @@
+# Copyright (C) 2025 Fabian Genthner
+# This file is distributed under the same license as the FG Ticker plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: FG Ticker 1.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/fg-ticker\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2025-10-07T10:57:43+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.12.0\n"
+
+#. Plugin Name of the plugin
+#: index.php
+msgid "FG Ticker"
+msgstr ""
+
+#. Description of the plugin
+#: index.php
+msgid "Display a continuous, scrolling line of text horizontally across the screen"
+msgstr ""
+
+#. Author of the plugin
+#: index.php
+msgid "Fabian Genthner"
+msgstr ""
+
+#. Author URI of the plugin
+#: index.php
+msgid "https://fabiangenthner.de/"
+msgstr ""
+
+#: build/index.js:1
+#: src/edit.js:29
+msgid "Settings"
+msgstr ""
+
+#: build/index.js:1
+#: src/edit.js:32
+msgid "Delay before start"
+msgstr ""
+
+#: build/index.js:1
+#: src/edit.js:33
+msgid "Time in ms before the marquee starts animating"
+msgstr ""
+
+#: build/index.js:1
+#: src/edit.js:46
+msgid "Duplicated"
+msgstr ""
+
+#: build/index.js:1
+#: src/edit.js:47
+msgid "Should the marquee be duplicated to show an effect of continuous flow. Use this only when the text is shorter than the container"
+msgstr ""
+
+#: build/index.js:1
+#: src/edit.js:57
+msgid "Direction"
+msgstr ""
+
+#: build/index.js:1
+#: src/edit.js:58
+msgid "Direction towards which the marquee will animate"
+msgstr ""
+
+#: build/index.js:1
+#: src/edit.js:64
+msgid "Left"
+msgstr ""
+
+#: build/index.js:1
+#: src/edit.js:65
+msgid "Right"
+msgstr ""
+
+#: build/index.js:1
+#: src/edit.js:72
+msgid "Pause on hover"
+msgstr ""
+
+#: build/index.js:1
+#: src/edit.js:73
+msgid "Pause the marquee on hover"
+msgstr ""
+
+#: build/index.js:1
+#: src/edit.js:80
+msgid "Speed"
+msgstr ""
+
+#: build/index.js:1
+#: src/edit.js:81
+msgid "Speed allows you to set a relatively constant marquee speed regardless of the width of the containing element. Speed is measured in pixels/second"
+msgstr ""
+
+#: build/index.js:1
+#: src/edit.js:95
+msgid "Gap"
+msgstr ""
+
+#: build/index.js:1
+#: src/edit.js:96
+msgid "Gap in pixels between the tickers"
+msgstr ""
+
+#: build/index.js:1
+#: src/edit.js:107
+msgid "Recalc on resize"
+msgstr ""
+
+#: build/index.js:1
+#: src/edit.js:108
+msgid "Should the marquee be updated on resize"
+msgstr ""
+
+#: build/block.json
+#: src/block.json
+msgctxt "block title"
+msgid "FG Ticker"
+msgstr ""
+
+#: build/block.json
+#: src/block.json
+msgctxt "block description"
+msgid "Display a continuous, scrolling line of text horizontally across the screen"
+msgstr ""
