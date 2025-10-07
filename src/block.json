@@ -1,0 +1,52 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "fg/fg-ticker",
+  "version": "1.0",
+  "title": "FG Ticker",
+  "category": "widgets",
+  "icon": "block-default",
+  "description": "Display a continuous, scrolling line of text horizontally across the screen",
+  "supports": {
+    "html": false,
+    "color": {
+      "background": true,
+      "text": true
+    }
+  },
+  "attributes": {
+    "delayBeforeStart": {
+      "type": "number",
+      "default": 1000
+    },
+    "duplicated": {
+      "type": "boolean",
+      "default": false
+    },
+    "direction": {
+      "type": "string",
+      "default": "left"
+    },
+    "pauseOnHover": {
+      "type": "boolean",
+      "default": false
+    },
+    "speed": {
+      "type": "number",
+      "default": 200
+    },
+    "gap": {
+      "type": "number",
+      "default": 85
+    },
+    "recalcResize": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "textdomain": "fg-ticker",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "viewScript": "file:./view.js"
+}

@@ -1,0 +1,19 @@
+{
+  "name": "fg-ticker",
+  "version": "1.0.0",
+  "description": "Display a continuous, scrolling line of text horizontally across the screen",
+  "main": "index.js",
+  "scripts": {
+    "start": "wp-scripts start",
+    "build": "wp-scripts build",
+    "packages-update": "wp-scripts packages-update"
+  },
+  "author": "Fabian Genthner",
+  "license": "ISC",
+  "devDependencies": {
+    "@wordpress/scripts": "^30.22.0"
+  },
+  "dependencies": {
+    "vanilla-marquee": "^1.1.2"
+  }
+}
