@@ -1,0 +1,15 @@
+.wp-block-fg-fg-ticker {
+  padding: 0.5rem 0;
+
+  .js-marquee-wrapper {
+    overflow: hidden;
+  }
+
+  .js-marquee {
+    display: flex;
+
+    * {
+      margin: 0;
+    }
+  }
+}

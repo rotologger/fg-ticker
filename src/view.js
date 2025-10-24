@@ -25,8 +25,16 @@ class Ticker {
       duplicated,
       pauseOnHover: pauseonhover == "true" || false,
       speed,
-      gap,
+      gap: 0,
       recalcResize: recalcresize == "true" || false,
+    });
+
+    el.querySelectorAll(".js-marquee")?.forEach((marquee) => {
+      const childEls = Array.from(marquee.children);
+
+      childEls.forEach((el) => {
+        el.style.padding = `0 ${gap / 2}px`;
+      });
     });
   }
 }

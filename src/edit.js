@@ -90,17 +90,15 @@ export default function Edit({ attributes, setAttributes }) {
           />
 
           {/* Gap */}
-          {duplicated && (
-            <NumberControl
-              label={__("Gap", "fg-ticker")}
-              help={__("Gap in pixels between the tickers", "fg-ticker")}
-              value={gap}
-              onChange={(val) => setAttributes({ gap: val * 1 })}
-              min="0"
-              max="200"
-              step="10"
-            />
-          )}
+          <NumberControl
+            label={__("Gap", "fg-ticker")}
+            help={__("Gap in pixels between the tickers", "fg-ticker")}
+            value={gap}
+            onChange={(val) => setAttributes({ gap: val * 1 })}
+            min="0"
+            max="200"
+            step="10"
+          />
 
           {/* Recalc on resize */}
           <ToggleControl
