@@ -1,39 +1,27 @@
-import marquee from "vanilla-marquee";
-
 class Ticker {
   constructor() {
-    this.tickers =
-      Array.from(document.querySelectorAll(".wp-block-fg-fg-ticker")) || [];
-
-    this.tickers.forEach((ticker) => this.init(ticker));
+    this.tickers = document.querySelectorAll(".wp-block-fg-fg-ticker");
+    this.init();
   }
 
-  init(el) {
-    const {
-      delay,
-      duplicated,
-      direction,
-      pauseonhover,
-      speed,
-      gap,
-      recalcresize,
-    } = el.dataset;
+  init() {
+    this.tickers?.forEach((ticker) => {
+      const { direction, speed, gap } = ticker.dataset;
 
-    new marquee(el, {
-      delayBeforeStart: delay,
-      direction,
-      duplicated,
-      pauseOnHover: pauseonhover == "true" || false,
-      speed,
-      gap: 0,
-      recalcResize: recalcresize == "true" || false,
-    });
+      const list = ticker.querySelector(".ticker-list");
+      const clone = list?.cloneNode(true);
+      clone && ticker.appendChild(clone);
 
-    el.querySelectorAll(".js-marquee")?.forEach((marquee) => {
-      const childEls = Array.from(marquee.children);
+      ticker.querySelectorAll(".ticker-list").forEach((list) => {
+        list.style.animation = `ticker ${
+          list.offsetWidth / speed / 5
+        }s linear infinite`;
+        list.style.animationDirection =
+          direction === "left" ? "normal" : "reverse";
 
-      childEls.forEach((el) => {
-        el.style.padding = `0 ${gap / 2}px`;
+        list
+          .querySelectorAll("p")
+          ?.forEach((item) => (item.style.marginRight = `${gap}px`));
       });
     });
   }

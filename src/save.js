@@ -1,28 +1,20 @@
 import { InnerBlocks, useBlockProps } from "@wordpress/block-editor";
 
 export default function save({ attributes }) {
-  const {
-    delayBeforeStart,
-    duplicated,
-    direction,
-    pauseOnHover,
-    speed,
-    gap,
-    recalcResize,
-  } = attributes;
+  const { direction, pauseOnHover, speed, gap } = attributes;
 
   return (
     <div
-      {...useBlockProps.save()}
-      data-delay={delayBeforeStart}
-      data-duplicated={duplicated}
+      {...useBlockProps.save({
+        className: pauseOnHover ? "pauseonhover" : "",
+      })}
       data-direction={direction}
-      data-pauseonhover={pauseOnHover}
       data-speed={speed}
       data-gap={gap}
-      data-recalcresize={recalcResize}
     >
-      <InnerBlocks.Content />
+      <div className="ticker-list">
+        <InnerBlocks.Content />
+      </div>
     </div>
   );
 }

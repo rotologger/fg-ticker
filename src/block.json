@@ -15,14 +15,6 @@
     }
   },
   "attributes": {
-    "delayBeforeStart": {
-      "type": "number",
-      "default": 1000
-    },
-    "duplicated": {
-      "type": "boolean",
-      "default": false
-    },
     "direction": {
       "type": "string",
       "default": "left"
@@ -33,15 +25,11 @@
     },
     "speed": {
       "type": "number",
-      "default": 200
+      "default": 20
     },
     "gap": {
       "type": "number",
       "default": 85
-    },
-    "recalcResize": {
-      "type": "boolean",
-      "default": false
     }
   },
   "textdomain": "fg-ticker",

@@ -12,8 +12,5 @@
   "license": "ISC",
   "devDependencies": {
     "@wordpress/scripts": "^30.22.0"
-  },
-  "dependencies": {
-    "vanilla-marquee": "^1.1.2"
   }
 }

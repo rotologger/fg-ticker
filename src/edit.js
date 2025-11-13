@@ -6,6 +6,7 @@ import {
 import {
   PanelBody,
   __experimentalNumberControl as NumberControl,
+  RangeControl,
   ToggleControl,
   RadioControl,
 } from "@wordpress/components";
@@ -13,45 +14,12 @@ import { __ } from "@wordpress/i18n";
 import "./editor.scss";
 
 export default function Edit({ attributes, setAttributes }) {
-  const {
-    delayBeforeStart,
-    duplicated,
-    direction,
-    pauseOnHover,
-    speed,
-    gap,
-    recalcResize,
-  } = attributes;
+  const { direction, pauseOnHover, speed, gap } = attributes;
 
   return (
     <>
       <InspectorControls>
         <PanelBody title={__("Settings", "fg-ticker")}>
-          {/* Delay before start */}
-          <NumberControl
-            label={__("Delay before start", "fg-ticker")}
-            help={__(
-              "Time in ms before the marquee starts animating",
-              "fg-ticker"
-            )}
-            value={delayBeforeStart}
-            onChange={(val) => setAttributes({ delayBeforeStart: val * 1 })}
-            min="0"
-            max="2000"
-            step="10"
-          />
-
-          {/* Duplicated */}
-          <ToggleControl
-            label={__("Duplicated", "fg-ticker")}
-            help={__(
-              "Should the marquee be duplicated to show an effect of continuous flow. Use this only when the text is shorter than the container",
-              "fg-ticker"
-            )}
-            checked={duplicated}
-            onChange={() => setAttributes({ duplicated: !duplicated })}
-          />
-
           {/* Direction */}
           <RadioControl
             label={__("Direction", "fg-ticker")}
@@ -76,17 +44,19 @@ export default function Edit({ attributes, setAttributes }) {
           />
 
           {/* Speed */}
-          <NumberControl
+          <RangeControl
             label={__("Speed", "fg-ticker")}
             help={__(
-              "Speed allows you to set a relatively constant marquee speed regardless of the width of the containing element. Speed is measured in pixels/second",
-              "fg-ticker"
+              __(
+                "Speed allows you to set a relatively constant marquee speed regardless of the width of the containing element. Speed is measured in pixels/second",
+                "fg-ticker"
+              )
             )}
             value={speed}
             onChange={(val) => setAttributes({ speed: val * 1 })}
-            min="0"
-            max="1000"
-            step="10"
+            min="1"
+            max="100"
+            step="1"
           />
 
           {/* Gap */}
@@ -98,14 +68,6 @@ export default function Edit({ attributes, setAttributes }) {
             min="0"
             max="200"
             step="10"
-          />
-
-          {/* Recalc on resize */}
-          <ToggleControl
-            label={__("Recalc on resize", "fg-ticker")}
-            help={__("Should the marquee be updated on resize", "fg-ticker")}
-            checked={recalcResize}
-            onChange={() => setAttributes({ recalcResize: !recalcResize })}
           />
         </PanelBody>
       </InspectorControls>

@@ -1,15 +1,22 @@
 .wp-block-fg-fg-ticker {
-  padding: 0.5rem 0;
+  display: flex;
 
-  .js-marquee-wrapper {
-    overflow: hidden;
-  }
-
-  .js-marquee {
+  .ticker-list {
     display: flex;
 
-    * {
-      margin: 0;
+    p {
+      white-space: nowrap;
+      margin-top: 0;
     }
+  }
+
+  &.pauseonhover:hover .ticker-list {
+    animation-play-state: paused !important;
+  }
+}
+
+@keyframes ticker {
+  100% {
+    transform: translateX(-100%);
   }
 }
